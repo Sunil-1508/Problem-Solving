@@ -45,25 +45,23 @@ class Solution
         else t++;
         g=g->next;
         }
-        Node *ans=new Node(10);
-        Node *u=ans;
+        Node *ans=head;
         while(z){
-           ans->next=new Node(0);
+           ans->data=0;
            ans=ans->next;
            z--;
         }
         while(o){
-           ans->next=new Node(1);
+           ans->data=1;
            ans=ans->next;
            o--;
         }
         while(t){
-           ans->next=new Node(2);
+           ans->data=2;
            ans=ans->next;
            t--;
         }
-        u=u->next;
-        return u;
+        return head;
         
         
         
