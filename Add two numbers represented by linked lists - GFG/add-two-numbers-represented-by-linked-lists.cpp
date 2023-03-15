@@ -81,32 +81,23 @@ class Solution
         }
         return c;
     }
-    void print(Node *root){
-        while(root){
-        cout<<root->data<<" ";
-        root=root->next;
-        }
-    }
+    // void print(Node *root){
+    //     while(root){
+    //     cout<<root->data<<" ";
+    //     root=root->next;
+    //     }
+    // }
     struct Node* addTwoLists(struct Node* first, struct Node* second)
     {
-        // code here
         Node *f=reverse(first);
         Node *s=reverse(second);
-        
-        // print(f);
-        // cout<<endl;
-        // print(s);
-        // cout<<endl;
-        
+       
         if(len(s)>len(f)){
             Node *t=f;
             f=s;
             s=t;
         }
-        // print(f);
-        // cout<<endl;
-        // print(s);
-        // cout<<endl;
+        
         Node *j=f;
         int cn=0;
         while(f){
@@ -114,12 +105,6 @@ class Solution
             if(s!=NULL) { f->data=(f->data+s->data+cn)%10; cn=(k+s->data+cn)/10;}
             else {f->data=(f->data+cn)%10; cn=(k+cn)/10;}
             
-            //cout<<f->data<<"-"<<cn<<" ";
-            
-            // if(cn!=0){
-            // if(s->next==NULL  and f->next!=NULL) f->next->data=(f->next->data+cn);
-            // else if(s->next==NULL  and f->next==NULL) f->next=new Node(cn);
-            // }
             if(s!=NULL) s=s->next;
             if(f->next==NULL){ if(cn!=0) { f->next=new Node(cn);} break;} 
             if(s==NULL and cn==0) break;
