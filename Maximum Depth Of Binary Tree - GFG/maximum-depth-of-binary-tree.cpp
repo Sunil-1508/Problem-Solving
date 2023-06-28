@@ -94,10 +94,11 @@ class Solution{
     /*You are required to complete this method*/
     int maxDepth(Node *root) {
         // Your code here
-        if(root==NULL) { return 0;}
-        int l=maxDepth(root->left);
-        int r=maxDepth(root->right);
-        return max(l,r)+1;
+        if(root==NULL) return 0;
+        int lh=maxDepth(root->left);
+        int rh=maxDepth(root->right);
+        
+        return max(lh,rh)+1;
     }
 };
 
