@@ -6,21 +6,21 @@ using namespace std;
 class Solution {
   public:
     // Function to return a list containing the DFS traversal of the graph.
-    vector<int>ans;
     
-    void dfs(int vis[],vector<int> adj[],int i){
-        vis[i]=1;
-        ans.push_back(i);
-        for(auto it : adj[i]){
-        if(vis[it]!=1)
-        dfs(vis,adj,it);
+    void dfs(vector<int> &v, vector<int> adj[],int i,vector<int> &ans){
+        if(v[i]!=1){
+            v[i]=1;
+            ans.push_back(i);
+            for(auto it : adj[i]){
+                dfs(v,adj,it,ans);
+            }
         }
     }
     vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         // Code here
-        int vis[V]={0};
-        dfs(vis,adj,0);
-        
+        vector<int>v(V,0);
+        vector<int>ans;
+        dfs(v,adj,0,ans);
         return ans;
     }
 };
