@@ -12,27 +12,14 @@ class Solution
     int missingNumber(int arr[], int n) 
     { 
         
-        for(int i = 0 ; i<n ;i++){
-            if(arr[i]<=0){
-                arr[i] = n+2;
-            }
-        }
-       
-        for(int i = 0 ; i<n ; i++){
-            int x = abs(arr[i]);
-            if(x<=n and arr[x-1]>0){
-                arr[x-1]*=-1;
-            }
-            
+        vector<int>v(n+2,0);
+        for(int i=0;i<n;i++){
+            if(arr[i]>=0 and arr[i]<n+2) v[arr[i]]=1;
         }
         
-        for(int i=0 ; i<n ; i++){
-
-            if(arr[i]>0){
-                return i+1;
-            }
+        for(int i=1;i<n+2;i++){
+            if(v[i]==0) return i;
         }
-        return n+1;  
     } 
 };
 
