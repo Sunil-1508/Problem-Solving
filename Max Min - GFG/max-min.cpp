@@ -10,15 +10,17 @@ using namespace std;
 class Solution
 {
    public:
-    int findSum(int A[], int n)
+    int findSum(int A[], int N)
     {
     	//code here.
     	int mi=INT_MAX;
     	int mx=INT_MIN;
-    	for(int i=0;i<n;i++){
-    	   mi=min(mi,A[i]);
-    	   mx=max(mx,A[i]);
+    	
+    	for(int i=0;i<N;i++){
+    	    mi=min(A[i],mi);
+    	    mx=max(A[i],mx);
     	}
+    	
     	return mi+mx;
     }
 
