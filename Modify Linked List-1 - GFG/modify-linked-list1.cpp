@@ -65,7 +65,6 @@ class Solution{
         //add code here.
         
         Node *c1=head;
-        
         Node *f1=head;
         Node *f2=head;
         Node *f=head;
@@ -74,12 +73,6 @@ class Solution{
             f1=f1->next;
             f=f->next->next;
         }
-        
-        //cout<<f1->data;
-        // Node *c2=f1;
-        // while(c2->next){
-        //     c2=c2->next;
-        // }
         
         //cout<<c2->data;
         
@@ -101,10 +94,7 @@ class Solution{
         }
         
         f=reverse(g);
-        
 
-        
-        //cout<<f1->data<<" "<<f1->next->next->data<<" ";
         
         
         return head;
