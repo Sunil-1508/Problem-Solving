@@ -11,18 +11,45 @@ class Solution
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
         // Code here
-        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>>pq;
+        // priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>>pq;
+        
+        // vector<int>v(V,1e9);
+        
+        // v[S]=0;
+        
+        // pq.push({0,S});
+        
+        // while(!pq.empty()){
+        //     int dis=pq.top().first;
+        //     int node=pq.top().second;
+        //     pq.pop();
+            
+        //     for(auto it : adj[node]){
+        //         int adjnode=it[0];
+        //         int adjweight=it[1];
+                
+        //         if(v[adjnode]>adjweight+dis){
+        //             v[adjnode]=adjweight+dis;
+        //             pq.push({v[adjnode],adjnode});
+        //         }
+        //     }
+        // }
+        
+        // return v;
+        
+        set<pair<int,int>>pq;
         
         vector<int>v(V,1e9);
         
         v[S]=0;
         
-        pq.push({0,S});
+        pq.insert({0,S});
         
         while(!pq.empty()){
-            int dis=pq.top().first;
-            int node=pq.top().second;
-            pq.pop();
+            auto i=*pq.begin();
+            int dis=i.first;
+            int node=i.second;
+            pq.erase(i);
             
             for(auto it : adj[node]){
                 int adjnode=it[0];
@@ -30,7 +57,7 @@ class Solution
                 
                 if(v[adjnode]>adjweight+dis){
                     v[adjnode]=adjweight+dis;
-                    pq.push({v[adjnode],adjnode});
+                    pq.insert({v[adjnode],adjnode});
                 }
             }
         }
