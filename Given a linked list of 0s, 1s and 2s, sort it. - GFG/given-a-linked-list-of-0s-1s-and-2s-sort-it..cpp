@@ -35,8 +35,7 @@ class Solution
     //Function to sort a linked list of 0s, 1s and 2s.
     Node* segregate(Node *head) {
         
-        // Add code here
-        
+       
         int z=0,o=0,t=0;
         Node *g=head;
         while(g){
@@ -62,10 +61,6 @@ class Solution
            t--;
         }
         return head;
-        
-        
-        
-
         
     }
 };
