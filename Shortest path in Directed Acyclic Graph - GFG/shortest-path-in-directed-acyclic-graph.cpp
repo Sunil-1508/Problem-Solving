@@ -6,6 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 // User function Template for C++
+// User function Template for C++
 class Solution {
   public:
     void dfs(int i,vector<pair<int,int>> adj[],vector<int> &vis,stack<int> &s){
@@ -60,7 +61,6 @@ class Solution {
         
     }
 };
-
 
 //{ Driver Code Starts.
 int main() {
