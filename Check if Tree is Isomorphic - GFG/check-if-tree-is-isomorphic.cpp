@@ -101,10 +101,11 @@ class Solution{
     
     return (
         
-    (root1->data==root2->data) and (
-    ( isIsomorphic(root1->left,root2->right) and isIsomorphic(root1->right,root2->left) ) or 
-    ( isIsomorphic(root1->left,root2->left) and isIsomorphic(root1->right,root2->right) )
-    )
+    (root1->data==root2->data) and 
+        (
+            ( isIsomorphic(root1->left,root2->right) and isIsomorphic(root1->right,root2->left) ) or 
+            ( isIsomorphic(root1->left,root2->left) and isIsomorphic(root1->right,root2->right) )
+        )
     );
     }
 };
