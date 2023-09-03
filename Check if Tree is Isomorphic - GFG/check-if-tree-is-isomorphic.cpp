@@ -96,8 +96,12 @@ class Solution{
     bool isIsomorphic(Node *root1,Node *root2)
     {
     //add code here.
+    
+    
     if(root1==NULL and root2==NULL) return true;
     if(root1==NULL or root2==NULL) return false;
+    
+    if(root1->data!=root2->data) return false;
     
     return (
         
