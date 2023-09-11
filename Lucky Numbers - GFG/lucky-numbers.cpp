@@ -24,6 +24,10 @@ public:
         }
         return true;
         
+        
+        
+        // check for index like array
+        
     }
 };
 
