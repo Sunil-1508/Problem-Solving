@@ -15,18 +15,19 @@ class Solution
     vector<long long> printFibb(int n) 
     {
         //code here
-        long long  a=1;
-        long long b=1;
+        long long x=0,y=1,t,s;
         vector<long long>v;
-        
-        while(n--){
-            
-            v.push_back(a);
-            long long t=a+b;
-            a=b;
-            b=t;
+        v.push_back(1);
+        if(n==1){return v;}
+        while(n-1)
+        {
+            s=x+y;
+            v.push_back(s);
+            t=s;
+            x=y;
+            y=t;
+            n--;
         }
-        
         return v;
     }
 };
