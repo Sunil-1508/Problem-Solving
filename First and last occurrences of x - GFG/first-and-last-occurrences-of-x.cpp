@@ -9,7 +9,6 @@ class Solution
     vector<int> find(int arr[], int n , int x )
     {
         // code here
-        
         auto t=binary_search(arr,arr+n,x);
         
         if(t==0) return {-1,-1};
