@@ -26,9 +26,10 @@ public:
 	      if(i+cnt(i)==n) return 0;
 	      i-=1;
 	    }
-	    
 	    return 1;
 	}
+	    
+	    
 };
 
 
